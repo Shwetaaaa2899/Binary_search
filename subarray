@@ -1,0 +1,15 @@
+def create_subarrays():
+    arr = [1,2,3,4,5]
+
+    for i in range(len(arr)):
+    
+        for j in range(i,len(arr)):
+        
+            for k in range(i,j):
+            
+                print(arr[k], end = "\t" )
+                
+            print('\r')
+print(create_subarrays())
+
+            
