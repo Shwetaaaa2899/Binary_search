@@ -1,0 +1,27 @@
+def bin(arr , low , high, target):
+    
+   
+    
+    while(low <= high):
+        mid = low + high // 2
+
+        if(arr[mid] == target):
+            return mid
+        elif(arr[mid] < target):
+            low = mid + 1
+        else:
+            high = mid- 1 
+        
+    return -1
+arr = [2,3,4,5,6,7]
+target = 7
+print(bin(arr, 0, len(arr)-1,target))
+#If element is not present
+target1 = 88
+print(bin(arr, 0, len(arr)-1,target1))
+
+#Thankyou for this sucess
+
+
+
+        
