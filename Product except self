@@ -1,0 +1,19 @@
+def product_exself():
+    arr = [10, 3, 5, 6, 2]
+  #  temp = 0
+    prod = 1
+
+    for i in range(len(arr)):
+        
+      #Storing the arrays value in temp 
+      #making arr[i] = 1
+        temp , arr[i] = arr[i] , 1
+       
+        prod = 1
+        for j in range(len(arr)):
+            prod *= arr[j]
+        print("prod is",prod)
+        
+        arr[i] = temp
+        temp  = 0
+product_exself()
