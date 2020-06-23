@@ -1,0 +1,17 @@
+def brute_force():
+    arr = [1,2,3,4,5,6,7]
+    k = 3
+    temp = 0
+    for i in range(k):
+        #I loop will runs 3 tymes
+        temp = arr[len(arr)-1]
+        #temp will store the last elemt
+        for j in range(len(arr)-1,-1,-1):
+            arr[j] = arr[j-1]
+    #Each elemnet will store the valoue of the previous elemnt
+        arr[j] = temp
+    #After coming out arr[0] will have temp
+    return arr
+    
+a =  brute_force()
+print("The rotated array using nested loop is",a)
