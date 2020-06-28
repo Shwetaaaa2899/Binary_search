@@ -1,0 +1,33 @@
+#The code is to return the count by calculating whether  "elemnt + 1" is present in the array or not
+#There are 2 methods explaimed inO(n*n) Tym Complexity
+def presence():
+    can = 0
+    arr = [1,1,3,3,5,5,7,7]
+    count = 0
+    for i in range(len(arr)):
+
+        
+        can = arr[i]+1
+        for j in range(i+1,len(arr)):
+            if(arr[j] == can):
+                count += 1
+
+    return count
+a = presence()
+print("The count of the elmnt is",a)
+
+#Method 2
+def plusone():
+    ar = [1,2,3,4,5] 
+    count = 0
+    can = 0
+    for i in range(len(ar)-1,-1,-1):
+        can = (ar[i] -1)
+
+        for j in range(i-1,-1,-1):
+            if(ar[j] == can):
+                count += 1
+
+    return count
+s = plusone()
+print("The second method count is",s)
