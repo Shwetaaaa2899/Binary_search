@@ -1,0 +1,68 @@
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+#Method to insret the Nodes
+def insert(root , key):
+    if(root == None):
+        return 
+    else:
+
+        if(root.data > key.data):
+            if(root.left == None):
+               # print(f"The left {root.data} is {root.left.data}")
+                root.left = key
+                print(f"The left of  {root.data} is {root.left.data}")
+                
+            else:
+                print(f"{root.left.data} recursion on left")
+                
+                insert(root.left , key)
+        if(root.data < key.data):
+            if(root.right == None):
+              #  print(f"{root.data} right is {root.right.data}")
+                root.right = key
+                print(f"{root.data} right is {root.right.data}")
+                
+            else:
+                print(f"{root.right.data} on right starts")
+                insert(root.right , key)
+
+#Method to find the parent of the given alue
+
+def find_parentss(root , value):
+    if(root == None or root.data == value ):
+        return 
+    
+    if(root.left is not None and root.left.data == value.data):
+        print(f"Parent is {root.data}")
+        return root.data
+    
+    if(root.right  is not None and root.right.data == value.data):
+        print(f"Parent on right side is{ root.data}")
+        return root.data
+           
+    return (find_parentss(root.left,value) or
+    find_parentss(root.right,value))
+#trying second mthof]d
+def find_parent(root,value,parent):
+    if(root == None):
+        return
+    if(root.data == value.data):
+        print("The parent is",parent)
+    else:
+        find_parent(root.left , value,root.data)
+        find_parent(root.right , value , root.data)
+root = Node(8)
+insert(root,Node(3))
+insert(root,Node(10))
+insert(root , Node(1))
+insert(root , Node(6))
+insert(root , Node(14))
+insert(root , Node(4))
+insert(root , Node(7))
+insert(root , Node(13))
+
+print("The parent is at",find_parentss(root,Node(7)))
